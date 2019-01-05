@@ -13,3 +13,8 @@
 "poItemCount" = "%d Items";
 "poActionApprove" = "Approve";
 "poActionReject" = "Reject";
+"noteAlertTitle" = "Add Note";
+"noteAlertPlaceholderOptional" = "Optional";
+"noteAlertPlaceholderMandatory" = "Mandatory";
+"noteAlertButtonOK" = "OK";
+"noteAlertButtonCancel" = "Cancel";"
