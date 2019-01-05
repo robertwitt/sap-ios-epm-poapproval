@@ -7,3 +7,5 @@
 */
 
 "errorAlertTitle" = "Error";
+"poInboxTitleWithCount" = "Purchase Orders (%d)";
+"poOrderedByWithName" = "Ordered by %@";

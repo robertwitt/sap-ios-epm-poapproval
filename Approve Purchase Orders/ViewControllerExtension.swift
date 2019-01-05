@@ -11,11 +11,11 @@ import SAPOData
 
 extension UIViewController {
     
-    private var dataService: EPMREFAPPSPOAPVSRVEntities<OnlineODataProvider> {
+    var dataService: EPMREFAPPSPOAPVSRVEntities<OnlineODataProvider> {
         return (UIApplication.shared.delegate as! AppDelegate).epmrefappspoapvsrvEntities
     }
     
-    private func showAlert(withError error: Error) {
+    func showAlert(withError error: Error) {
         let alert = UIAlertController(title: NSLocalizedString("errorAlertTitle", comment: ""),
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)

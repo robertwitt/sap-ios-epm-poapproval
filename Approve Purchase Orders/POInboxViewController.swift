@@ -8,8 +8,13 @@
 
 import UIKit
 import SAPFiori
+import SAPOData
 
 class POInboxViewController: UITableViewController {
+    
+    // MARK: Properties
+    
+    private var purchaseOrders = [PurchaseOrder]()
     
     // MARK: View Lifecycle
     
@@ -18,6 +23,7 @@ class POInboxViewController: UITableViewController {
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableView.automaticDimension
+        refreshInbox()
     }
 
     // MARK: Table View Data Source
@@ -27,17 +33,20 @@ class POInboxViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.purchaseOrders.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let purchaseOrder = purchaseOrders[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier, for: indexPath) as! FUIObjectTableViewCell
-        cell.headlineText = "Panorama Studios"
-        cell.subheadlineText = "Ordered by Peter Fuchs"
-        cell.footnoteText = "2 days ago"
-        cell.statusText = "6.196,26"
-        cell.substatusText = "USD"
+        cell.headlineText = purchaseOrder.supplierName
+        if let orderedByName = purchaseOrder.orderedByName {
+            cell.subheadlineText = String(format: NSLocalizedString("poOrderedByWithName", comment: ""), orderedByName)
+        }
+        cell.footnoteText = purchaseOrder.changedAt?.toString()
+        cell.statusText = purchaseOrder.grossAmount?.toString()
+        cell.substatusText = purchaseOrder.currencyCode
         cell.accessoryType = .disclosureIndicator
 
         return cell
@@ -52,5 +61,22 @@ class POInboxViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: Data Access
+    
+    private func refreshInbox() {
+        self.dataService.fetchPurchaseOrders { (purchaseOrders, error) in
+            if let error = error {
+                self.showAlert(withError: error)
+            }
+            self.purchaseOrders = purchaseOrders ?? [PurchaseOrder]()
+            self.refreshTitle()
+            self.tableView.reloadData()
+        }
+    }
+    
+    private func refreshTitle() {
+        title = String(format: NSLocalizedString("poInboxTitleWithCount", comment: ""), purchaseOrders.count)
+    }
+    
 }
