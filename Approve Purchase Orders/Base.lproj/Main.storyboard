@@ -85,6 +85,12 @@
                             </fragment>
                         </attributedString>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="6Qs-xI-7Ce">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="pullToRefresh:" destination="Hg4-SY-Mln" eventType="valueChanged" id="rIu-X3-gdJ"/>
+                        </connections>
+                    </refreshControl>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="size" keyPath="preferredContentSize">
                             <size key="value" width="320" height="480"/>

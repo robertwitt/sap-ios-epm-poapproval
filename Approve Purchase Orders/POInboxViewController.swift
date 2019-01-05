@@ -86,11 +86,19 @@ class POInboxViewController: UITableViewController {
     }
     */
     
+    // MARK: IBActions
+    
+    @IBAction func pullToRefresh(_ sender: UIRefreshControl) {
+        refreshInbox(showLoadingIndicator: false)
+    }
+    
     // MARK: Data Access
     
-    private func refreshInbox() {
+    private func refreshInbox(showLoadingIndicator: Bool = true) {
         let loadingIndicator = FUIModalLoadingIndicatorView()
-        loadingIndicator.show(inView: view, animated: true)
+        if showLoadingIndicator {
+            loadingIndicator.show(inView: view, animated: true)
+        }
         
         self.dataService.fetchPurchaseOrders { (purchaseOrders, error) in
             if let error = error {
@@ -98,6 +106,7 @@ class POInboxViewController: UITableViewController {
             }
             self.purchaseOrders = purchaseOrders ?? [PurchaseOrder]()
             self.refreshTitle()
+            self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
             loadingIndicator.dismiss()
         }
