@@ -24,6 +24,8 @@
 		40EB95D1FE60DAE2091BE05F /* FunctionImportResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */; };
 		476637CE9C4F30F9A5595E8C /* PurchaseOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */; };
 		4A1029D0A673428CCEFE9488 /* EPMREFAPPSPOAPVSRVEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9BAA9648F00B75BC35FC0D /* EPMREFAPPSPOAPVSRVEntities.swift */; };
+		4B6C756A21E03233009B2068 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C756921E03233009B2068 /* ViewControllerExtension.swift */; };
+		4B6C756D21E033E0009B2068 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B6C756F21E033E0009B2068 /* Localizable.strings */; };
 		4C1518F617AF29F1F949D86B /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E50382CA6B0BE83E9A087 /* Supplier.swift */; };
 		5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391D6B7C4C6B57144A96CD /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift */; };
 		618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA23C5372E5A49744F6735 /* PurchaseOrderDetailViewController.swift */; };
@@ -84,6 +86,8 @@
 		167306AA492FE21BCC6A2D68 /* EPMREFAPPSPOAPVSRVEntitiesMetadataText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EPMREFAPPSPOAPVSRVEntitiesMetadataText.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/internal/EPMREFAPPSPOAPVSRVEntitiesMetadataText.swift"; sourceTree = "<group>"; };
 		184C7E38FA1DE0EBD356EA3C /* PurchaseOrder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrder.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrder.swift"; sourceTree = "<group>"; };
 		4144546D7AC5BA85AF2BEBC4 /* EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/internal/EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift"; sourceTree = "<group>"; };
+		4B6C756921E03233009B2068 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		4B6C756E21E033E0009B2068 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionImportResult.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/FunctionImportResult.swift"; sourceTree = "<group>"; };
 		5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrderItem.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrderItem.swift"; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				2578BCD655AD663856D88892 /* PurchaseOrderItem */,
 				E7ACAFC312F612ED516CFE9E /* Supplier */,
 				C9993417906BCC51D75838C4 /* PurchaseOrder */,
+				4B6C756921E03233009B2068 /* ViewControllerExtension.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -228,10 +233,11 @@
 				755C10B41D5C63B000ECF6A2 /* Utils */,
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
 				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
-				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
-				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
+				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				7A1315C61D4B982000A5DA56 /* Info.plist */,
+				4B6C756F21E033E0009B2068 /* Localizable.strings */,
+				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
 			);
 			path = "Approve Purchase Orders";
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				12D066CF1F4DDB0E0075EBA4 /* ConfigurationProvider.plist in Resources */,
 				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
 				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
+				4B6C756D21E033E0009B2068 /* Localizable.strings in Resources */,
 				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
 				1683F8591CF482EDC0614B56 /* PurchaseOrderItem.storyboard in Resources */,
 				6E8B5E5BFF22DE9B875635D0 /* Supplier.storyboard in Resources */,
@@ -365,6 +372,7 @@
 				128B53061F8E667000E64DF6 /* SnapshotViewController.swift in Sources */,
 				12E84FE51F4ECF220061C99E /* OnboardingManager.swift in Sources */,
 				7A9F6FF61F3883D3000A1815 /* SAPFioriLoadingIndicator.swift in Sources */,
+				4B6C756A21E03233009B2068 /* ViewControllerExtension.swift in Sources */,
 				7A26CA1C1F31BA8800B156B6 /* CellCreationHelper.swift in Sources */,
 				12E07EF21E96851800460A94 /* CollectionType.swift in Sources */,
 				75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */,
@@ -392,6 +400,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4B6C756F21E033E0009B2068 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B6C756E21E033E0009B2068 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

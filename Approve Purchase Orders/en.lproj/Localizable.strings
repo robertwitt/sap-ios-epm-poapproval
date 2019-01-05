@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Approve Purchase Orders
+
+  Created by Robert Witt on 05.01.19.
+  Copyright © 2019 SAP. All rights reserved.
+*/
+
+"errorAlertTitle" = "Error"
