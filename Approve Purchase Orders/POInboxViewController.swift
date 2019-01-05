@@ -65,6 +65,9 @@ class POInboxViewController: UITableViewController {
     // MARK: Data Access
     
     private func refreshInbox() {
+        let loadingIndicator = FUIModalLoadingIndicatorView()
+        loadingIndicator.show(inView: view, animated: true)
+        
         self.dataService.fetchPurchaseOrders { (purchaseOrders, error) in
             if let error = error {
                 self.showAlert(withError: error)
@@ -72,6 +75,7 @@ class POInboxViewController: UITableViewController {
             self.purchaseOrders = purchaseOrders ?? [PurchaseOrder]()
             self.refreshTitle()
             self.tableView.reloadData()
+            loadingIndicator.dismiss()
         }
     }
     
