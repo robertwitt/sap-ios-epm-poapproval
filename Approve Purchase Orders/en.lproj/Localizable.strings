@@ -13,6 +13,8 @@
 "poItemCount" = "%d Items";
 "poActionApprove" = "Approve";
 "poActionReject" = "Reject";
+"poToastApprove" = "PO %@ approved";
+"poToastReject" = "PO %@ rejected";
 "noteAlertTitle" = "Add Note";
 "noteAlertPlaceholderOptional" = "Optional";
 "noteAlertPlaceholderMandatory" = "Mandatory";

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SAPFiori
 
 class POActionController {
     
@@ -23,6 +24,8 @@ class POActionController {
             completion(false, nil)
         }, okHandler: { (action) in
             // TODO: Invoke backend
+            completion(true, nil)
+            FUIToastMessage.show(message: String(format: NSLocalizedString("poToastApprove", comment: ""), purchaseOrder.poid!))
         })
         viewController.present(noteAlert!, animated: true)
     }
@@ -32,6 +35,8 @@ class POActionController {
             completion(false, nil)
         }, okHandler: { (action) in
             // TODO: Invoke backend
+            completion(true, nil)
+            FUIToastMessage.show(message: String(format: NSLocalizedString("poToastReject", comment: ""), purchaseOrder.poid!))
         })
         viewController.present(noteAlert!, animated: true)
     }
@@ -42,10 +47,7 @@ class POActionController {
             textField.placeholder = mandatory ? NSLocalizedString("noteAlertPlaceholderMandatory", comment: "") : NSLocalizedString("noteAlertPlaceholderOptional", comment: "")
         }
         alert.addAction(UIAlertAction(title: NSLocalizedString("noteAlertButtonCancel", comment: ""), style: .cancel, handler: cancelHandler))
-        
-        let okAction = UIAlertAction(title: NSLocalizedString("noteAlertButtonOK", comment: ""), style: .default, handler: okHandler)
-        okAction.isEnabled = !mandatory
-        alert.addAction(okAction)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("noteAlertButtonOK", comment: ""), style: .default, handler: okHandler))
         
         noteAlert = alert
     }
