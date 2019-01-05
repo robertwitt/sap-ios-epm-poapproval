@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAPFiori
 
 class PODetailViewController: UITableViewController {
     
@@ -17,6 +18,7 @@ class PODetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshDetail()
     }
 
     // MARK: Table View Data Source
@@ -40,5 +42,21 @@ class PODetailViewController: UITableViewController {
         return cell
     }
     */
+    
+    // MARK: Data Access
+    
+    private func refreshDetail() {
+        refreshHeader()
+        tableView.reloadData()
+    }
+    
+    private func refreshHeader() {
+        let header = FUIObjectHeader()
+        header.headlineText = "Panorama Studios"
+        header.subheadlineText = "Ordered by Peter Fuchs"
+        header.footnoteText = "2 days ago"
+        header.statusText = "$6,196.26"
+        tableView.tableHeaderView = header
+    }
 
 }
