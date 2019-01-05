@@ -57,23 +57,19 @@ class POInboxViewController: UITableViewController {
     // MARK: Table View Delegate
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let purchaseOrder = purchaseOrders[indexPath.row]
-        let actionController = POActionController(viewController: self)
         var actions = [UIContextualAction]()
         actions.append(UIContextualAction(style: .destructive, title: NSLocalizedString("poActionReject", comment: ""), handler: { (action, view, completion) in
+            let purchaseOrder = self.purchaseOrders[indexPath.row]
+            let actionController = POActionController(viewController: self)
             actionController.rejectPurchaseOrder(purchaseOrder, completion: { (success, error) in
-                if let error = error {
-                    self.showAlert(withError: error)
-                }
-                completion(success)
+                self.handlePOAction(at: indexPath, success: success, error: error, completion: completion)
             })
         }))
         actions.append(UIContextualAction(style: .normal, title: NSLocalizedString("poActionApprove", comment: ""), handler: { (action, view, completion) in
+            let purchaseOrder = self.purchaseOrders[indexPath.row]
+            let actionController = POActionController(viewController: self)
             actionController.approvePurchaseOrder(purchaseOrder, completion: { (success, error) in
-                if let error = error {
-                    self.showAlert(withError: error)
-                }
-                completion(success)
+                self.handlePOAction(at: indexPath, success: success, error: error, completion: completion)
             })
         }))
         
@@ -109,6 +105,17 @@ class POInboxViewController: UITableViewController {
     
     private func refreshTitle() {
         title = String(format: NSLocalizedString("poInboxTitleWithCount", comment: ""), purchaseOrders.count)
+    }
+    
+    private func handlePOAction(at indexPath: IndexPath, success: Bool, error: Error?, completion: (Bool) -> Void) {
+        if let error = error {
+            self.showAlert(withError: error)
+        }
+        if (success) {
+            self.purchaseOrders.remove(at: indexPath.row)
+            self.refreshTitle()
+        }
+        completion(success)
     }
     
 }
