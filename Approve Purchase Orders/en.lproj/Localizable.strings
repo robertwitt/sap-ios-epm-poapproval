@@ -6,6 +6,7 @@
   Copyright © 2019 SAP. All rights reserved.
 */
 
+"formattedTimeAgo" = "%@ ago";
 "errorAlertTitle" = "Error";
 "poInboxTitleWithCount" = "Purchase Orders (%d)";
 "poOrderedByWithName" = "Ordered by %@";

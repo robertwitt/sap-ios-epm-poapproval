@@ -11,11 +11,17 @@ import Foundation
 extension PurchaseOrder {
     
     var formattedGrossAmount: String? {
-        var formattedGrossAmount: String?
-        if let grossAmount = grossAmount, let currencyCode = currencyCode {
-            formattedGrossAmount = Formatter().format(amount: NSNumber(value: grossAmount.doubleValue()), currentCode: currencyCode)
+        guard let grossAmount = grossAmount, let currencyCode = currencyCode else {
+            return nil
         }
-        return formattedGrossAmount
+        return Formatter().format(amount: NSNumber(value: grossAmount.doubleValue()), currentCode: currencyCode)
+    }
+    
+    var formattedChangedAt: String? {
+        guard let changedAt = changedAt else {
+            return nil
+        }
+        return Formatter().format(date: changedAt.toDate())
     }
     
 }

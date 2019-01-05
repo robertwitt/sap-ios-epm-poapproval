@@ -44,7 +44,7 @@ class POInboxViewController: UITableViewController {
         if let orderedByName = purchaseOrder.orderedByName {
             cell.subheadlineText = String(format: NSLocalizedString("poOrderedByWithName", comment: ""), orderedByName)
         }
-        cell.footnoteText = purchaseOrder.changedAt?.toString()
+        cell.footnoteText = purchaseOrder.formattedChangedAt
         cell.statusText = purchaseOrder.formattedGrossAmount
         if let itemCount = purchaseOrder.itemCount {
             cell.substatusText = String(format: NSLocalizedString("poItemCount", comment: ""), itemCount)

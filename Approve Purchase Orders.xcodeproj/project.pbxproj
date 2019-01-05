@@ -29,6 +29,7 @@
 		4B6C757121E0357B009B2068 /* POInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757021E0357B009B2068 /* POInboxViewController.swift */; };
 		4B6C757321E047E8009B2068 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757221E047E8009B2068 /* Formatter.swift */; };
 		4B6C757521E048D3009B2068 /* PurchaseOrderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */; };
+		4B6C757721E0518B009B2068 /* LocalDateTimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */; };
 		4C1518F617AF29F1F949D86B /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E50382CA6B0BE83E9A087 /* Supplier.swift */; };
 		5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391D6B7C4C6B57144A96CD /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift */; };
 		618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA23C5372E5A49744F6735 /* PurchaseOrderDetailViewController.swift */; };
@@ -94,6 +95,7 @@
 		4B6C757021E0357B009B2068 /* POInboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POInboxViewController.swift; sourceTree = "<group>"; };
 		4B6C757221E047E8009B2068 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderExtension.swift; sourceTree = "<group>"; };
+		4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDateTimeExtension.swift; sourceTree = "<group>"; };
 		568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionImportResult.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/FunctionImportResult.swift"; sourceTree = "<group>"; };
 		5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrderItem.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrderItem.swift"; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				12E07EF11E96851800460A94 /* CollectionType.swift */,
+				4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */,
 				4B6C757221E047E8009B2068 /* Formatter.swift */,
 				4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */,
 			);
@@ -404,6 +407,7 @@
 				D9BFA6BEF3B3A256A2071FFE /* SupplierMasterViewController.swift in Sources */,
 				806FD815C9A51E77F7E69D4B /* SupplierDetailViewController.swift in Sources */,
 				7BEFD1C2A07876594B790D3A /* PurchaseOrderMasterViewController.swift in Sources */,
+				4B6C757721E0518B009B2068 /* LocalDateTimeExtension.swift in Sources */,
 				618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */,
 				4B6C757521E048D3009B2068 /* PurchaseOrderExtension.swift in Sources */,
 			);
