@@ -53,6 +53,32 @@ class POInboxViewController: UITableViewController {
 
         return cell
     }
+    
+    // MARK: Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let purchaseOrder = purchaseOrders[indexPath.row]
+        let actionController = POActionController(viewController: self)
+        var actions = [UIContextualAction]()
+        actions.append(UIContextualAction(style: .destructive, title: NSLocalizedString("poActionReject", comment: ""), handler: { (action, view, completion) in
+            actionController.rejectPurchaseOrder(purchaseOrder, completion: { (success, error) in
+                if let error = error {
+                    self.showAlert(withError: error)
+                }
+                completion(success)
+            })
+        }))
+        actions.append(UIContextualAction(style: .normal, title: NSLocalizedString("poActionApprove", comment: ""), handler: { (action, view, completion) in
+            actionController.approvePurchaseOrder(purchaseOrder, completion: { (success, error) in
+                if let error = error {
+                    self.showAlert(withError: error)
+                }
+                completion(success)
+            })
+        }))
+        
+        return UISwipeActionsConfiguration(actions: actions)
+    }
 
     /*
     // MARK: Navigation

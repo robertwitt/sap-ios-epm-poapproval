@@ -11,3 +11,5 @@
 "poInboxTitleWithCount" = "Purchase Orders (%d)";
 "poOrderedByWithName" = "Ordered by %@";
 "poItemCount" = "%d Items";
+"poActionApprove" = "Approve";
+"poActionReject" = "Reject";
