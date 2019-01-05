@@ -8,11 +8,19 @@
 
 import UIKit
 import SAPFiori
+import SAPOData
 
 class PODetailViewController: UITableViewController {
     
     // MARK: Properties
-    var purchaseOrderID: String?
+    
+    var purchaseOrderID: String? {
+        didSet {
+            refreshDetail()
+        }
+    }
+    
+    var purchaseOrder: PurchaseOrder?
 
     // MARK: View Lifecycle
     
@@ -46,16 +54,36 @@ class PODetailViewController: UITableViewController {
     // MARK: Data Access
     
     private func refreshDetail() {
-        refreshHeader()
-        tableView.reloadData()
+        guard let purchaseOrderID = purchaseOrderID else {
+            return
+        }
+        guard tableView != nil else {
+            return
+        }
+        
+        let loadingIndicator = FUIModalLoadingIndicatorView()
+        loadingIndicator.show(inView: view, animated: true)
+        
+        let query = DataQuery().withKey(PurchaseOrder.key(poid: purchaseOrderID)).expand(PurchaseOrder.purchaseOrderItems)
+        self.dataService.fetchPurchaseOrder(matching: query) { (purchaseOrder, error) in
+            if let error = error {
+                self.showAlert(withError: error)
+            }
+            self.purchaseOrder = purchaseOrder
+            self.refreshHeader()
+            self.tableView.reloadData()
+            loadingIndicator.dismiss()
+        }
     }
     
     private func refreshHeader() {
         let header = FUIObjectHeader()
-        header.headlineText = "Panorama Studios"
-        header.subheadlineText = "Ordered by Peter Fuchs"
-        header.footnoteText = "2 days ago"
-        header.statusText = "$6,196.26"
+        header.headlineText = purchaseOrder?.supplierName
+        if let orderedByName = purchaseOrder?.orderedByName {
+            header.subheadlineText = String(format: NSLocalizedString("poOrderedByWithName", comment: ""), orderedByName)
+        }
+        header.footnoteText = purchaseOrder?.formattedChangedAt
+        header.statusText = purchaseOrder?.formattedGrossAmount
         tableView.tableHeaderView = header
     }
 
