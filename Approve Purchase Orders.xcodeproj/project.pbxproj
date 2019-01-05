@@ -27,6 +27,8 @@
 		4B6C756A21E03233009B2068 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C756921E03233009B2068 /* ViewControllerExtension.swift */; };
 		4B6C756D21E033E0009B2068 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B6C756F21E033E0009B2068 /* Localizable.strings */; };
 		4B6C757121E0357B009B2068 /* POInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757021E0357B009B2068 /* POInboxViewController.swift */; };
+		4B6C757321E047E8009B2068 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757221E047E8009B2068 /* Formatter.swift */; };
+		4B6C757521E048D3009B2068 /* PurchaseOrderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */; };
 		4C1518F617AF29F1F949D86B /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E50382CA6B0BE83E9A087 /* Supplier.swift */; };
 		5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391D6B7C4C6B57144A96CD /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift */; };
 		618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA23C5372E5A49744F6735 /* PurchaseOrderDetailViewController.swift */; };
@@ -90,6 +92,8 @@
 		4B6C756921E03233009B2068 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		4B6C756E21E033E0009B2068 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4B6C757021E0357B009B2068 /* POInboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POInboxViewController.swift; sourceTree = "<group>"; };
+		4B6C757221E047E8009B2068 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderExtension.swift; sourceTree = "<group>"; };
 		568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionImportResult.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/FunctionImportResult.swift"; sourceTree = "<group>"; };
 		5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrderItem.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrderItem.swift"; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				12E07EF11E96851800460A94 /* CollectionType.swift */,
+				4B6C757221E047E8009B2068 /* Formatter.swift */,
+				4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				128B53061F8E667000E64DF6 /* SnapshotViewController.swift in Sources */,
 				12E84FE51F4ECF220061C99E /* OnboardingManager.swift in Sources */,
 				7A9F6FF61F3883D3000A1815 /* SAPFioriLoadingIndicator.swift in Sources */,
+				4B6C757321E047E8009B2068 /* Formatter.swift in Sources */,
 				4B6C756A21E03233009B2068 /* ViewControllerExtension.swift in Sources */,
 				7A26CA1C1F31BA8800B156B6 /* CellCreationHelper.swift in Sources */,
 				12E07EF21E96851800460A94 /* CollectionType.swift in Sources */,
@@ -398,6 +405,7 @@
 				806FD815C9A51E77F7E69D4B /* SupplierDetailViewController.swift in Sources */,
 				7BEFD1C2A07876594B790D3A /* PurchaseOrderMasterViewController.swift in Sources */,
 				618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */,
+				4B6C757521E048D3009B2068 /* PurchaseOrderExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
