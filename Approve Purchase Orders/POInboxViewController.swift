@@ -49,7 +49,8 @@ class POInboxViewController: UITableViewController {
         if let itemCount = purchaseOrder.itemCount {
             cell.substatusText = String(format: NSLocalizedString("poItemCount", comment: ""), itemCount)
         }
-        cell.accessoryType = .disclosureIndicator
+        cell.accessoryType = presentedInSplitView ? .none : .disclosureIndicator
+        cell.isMomentarySelection = !presentedInSplitView
 
         return cell
     }
@@ -57,6 +58,10 @@ class POInboxViewController: UITableViewController {
     // MARK: Table View Delegate
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard !presentedInSplitView else {
+            return UISwipeActionsConfiguration(actions: [])
+        }
+        
         var actions = [UIContextualAction]()
         actions.append(UIContextualAction(style: .destructive, title: NSLocalizedString("poActionReject", comment: ""), handler: { (action, view, completion) in
             let purchaseOrder = self.purchaseOrders[indexPath.row]
@@ -74,6 +79,18 @@ class POInboxViewController: UITableViewController {
         }))
         
         return UISwipeActionsConfiguration(actions: actions)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let purchaseOrder = purchaseOrders[indexPath.row]
+        let poDetailStoryboard = UIStoryboard(name: "PODetail", bundle: nil)
+        let poDetailViewController = poDetailStoryboard.instantiateViewController(withIdentifier: "PODetail") as! PODetailViewController
+        poDetailViewController.title = NSLocalizedString("poDetailTitle", comment: "")
+        poDetailViewController.purchaseOrderID = purchaseOrder.poid
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let rightNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "RightNavigationController") as! UINavigationController
+        rightNavigationController.viewControllers = [poDetailViewController]
+        splitViewController?.showDetailViewController(rightNavigationController, sender: nil)
     }
 
     /*

@@ -31,6 +31,8 @@
 		4B6C757521E048D3009B2068 /* PurchaseOrderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */; };
 		4B6C757721E0518B009B2068 /* LocalDateTimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */; };
 		4B6C757921E05F53009B2068 /* POActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757821E05F53009B2068 /* POActionController.swift */; };
+		4B6C757B21E0F2F2009B2068 /* PODetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */; };
+		4B6C757D21E0F48E009B2068 /* PODetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6C757C21E0F48E009B2068 /* PODetail.storyboard */; };
 		4C1518F617AF29F1F949D86B /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E50382CA6B0BE83E9A087 /* Supplier.swift */; };
 		5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391D6B7C4C6B57144A96CD /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift */; };
 		618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA23C5372E5A49744F6735 /* PurchaseOrderDetailViewController.swift */; };
@@ -98,6 +100,8 @@
 		4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderExtension.swift; sourceTree = "<group>"; };
 		4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDateTimeExtension.swift; sourceTree = "<group>"; };
 		4B6C757821E05F53009B2068 /* POActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POActionController.swift; sourceTree = "<group>"; };
+		4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODetailViewController.swift; sourceTree = "<group>"; };
+		4B6C757C21E0F48E009B2068 /* PODetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PODetail.storyboard; sourceTree = "<group>"; };
 		568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionImportResult.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/FunctionImportResult.swift"; sourceTree = "<group>"; };
 		5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrderItem.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrderItem.swift"; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 				C9993417906BCC51D75838C4 /* PurchaseOrder */,
 				4B6C756921E03233009B2068 /* ViewControllerExtension.swift */,
 				4B6C757021E0357B009B2068 /* POInboxViewController.swift */,
+				4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */,
 				4B6C757821E05F53009B2068 /* POActionController.swift */,
 			);
 			name = ViewControllers;
@@ -248,6 +253,7 @@
 				755C10B41D5C63B000ECF6A2 /* Utils */,
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
 				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
+				4B6C757C21E0F48E009B2068 /* PODetail.storyboard */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				7A1315C61D4B982000A5DA56 /* Info.plist */,
@@ -369,6 +375,7 @@
 				12D066CF1F4DDB0E0075EBA4 /* ConfigurationProvider.plist in Resources */,
 				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
 				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
+				4B6C757D21E0F48E009B2068 /* PODetail.storyboard in Resources */,
 				4B6C756D21E033E0009B2068 /* Localizable.strings in Resources */,
 				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
 				1683F8591CF482EDC0614B56 /* PurchaseOrderItem.storyboard in Resources */,
@@ -395,6 +402,7 @@
 				7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */,
 				5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */,
 				A25E6865D0330D13583A2CD0 /* EPMREFAPPSPOAPVSRVEntitiesMetadataParser.swift in Sources */,
+				4B6C757B21E0F2F2009B2068 /* PODetailViewController.swift in Sources */,
 				37C1607BBBF5B805EF217A99 /* EPMREFAPPSPOAPVSRVEntitiesMetadataText.swift in Sources */,
 				F4A65E4A9D86552952D36005 /* EPMREFAPPSPOAPVSRVEntitiesMetadataChanges.swift in Sources */,
 				11DB7FA46140E7956924FFD8 /* EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift in Sources */,

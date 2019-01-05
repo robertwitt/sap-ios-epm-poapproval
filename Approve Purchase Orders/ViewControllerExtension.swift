@@ -11,6 +11,10 @@ import SAPOData
 
 extension UIViewController {
     
+    var presentedInSplitView: Bool {
+        return !(splitViewController?.isCollapsed ?? true)
+    }
+    
     var dataService: EPMREFAPPSPOAPVSRVEntities<OnlineODataProvider> {
         return (UIApplication.shared.delegate as! AppDelegate).epmrefappspoapvsrvEntities
     }

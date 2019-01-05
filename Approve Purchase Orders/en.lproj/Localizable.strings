@@ -15,6 +15,7 @@
 "poActionReject" = "Reject";
 "poToastApprove" = "PO %@ approved";
 "poToastReject" = "PO %@ rejected";
+"poDetailTitle" = "Purchase Order";
 "noteAlertTitle" = "Add Note";
 "noteAlertPlaceholderOptional" = "Optional";
 "noteAlertPlaceholderMandatory" = "Mandatory";
