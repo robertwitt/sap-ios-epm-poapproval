@@ -92,18 +92,8 @@ class POInboxViewController: UITableViewController, PODetailViewControllerDelega
         rightNavigationController.viewControllers = [poDetailViewController]
         splitViewController?.showDetailViewController(rightNavigationController, sender: nil)
     }
-
-    /*
-    // MARK: Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    // MARK: IBActions
+    // MARK: IB Actions
     
     @IBAction func pullToRefresh(_ sender: UIRefreshControl) {
         refreshInbox(showLoadingIndicator: false)
@@ -123,6 +113,7 @@ class POInboxViewController: UITableViewController, PODetailViewControllerDelega
             }
             self.purchaseOrders = purchaseOrders ?? [PurchaseOrder]()
             self.refreshTitle()
+            self.refreshBadgeNumber()
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
             loadingIndicator.dismiss()
@@ -131,6 +122,10 @@ class POInboxViewController: UITableViewController, PODetailViewControllerDelega
     
     private func refreshTitle() {
         title = String(format: NSLocalizedString("poInboxTitleWithCount", comment: ""), purchaseOrders.count)
+    }
+    
+    private func refreshBadgeNumber() {
+        UIApplication.shared.applicationIconBadgeNumber = self.purchaseOrders.count
     }
     
     private func handlePOAction(at indexPath: IndexPath, success: Bool, error: Error?, completion: (Bool) -> Void) {
@@ -166,6 +161,7 @@ extension POInboxViewController {
         print(indexPath)
         purchaseOrders.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+        refreshBadgeNumber()
     }
     
 }
