@@ -14,8 +14,9 @@ class PODetailViewController: UITableViewController {
     
     // MARK: Properties
     
+    var delegate: PODetailViewControllerDelegate?
     var purchaseOrderID: String?
-    var purchaseOrder: PurchaseOrder?
+    private var purchaseOrder: PurchaseOrder?
 
     // MARK: View Lifecycle
     
@@ -54,16 +55,18 @@ class PODetailViewController: UITableViewController {
         actionSheet.addAction(UIAlertAction(title: NSLocalizedString("poActionApprove", comment: ""), style: .default, handler: { (action) in
             let actionController = POActionController(viewController: self)
             actionController.approvePurchaseOrder(self.purchaseOrder!, completion: { (success, error) in
-                // TODO: Handle action
+                self.delegate?.poDetailController(self, didFinishWithAction: .approved)
             })
         }))
         actionSheet.addAction(UIAlertAction(title: NSLocalizedString("poActionReject", comment: ""), style: .destructive, handler: { (action) in
             let actionController = POActionController(viewController: self)
             actionController.rejectPurchaseOrder(self.purchaseOrder!, completion: { (success, error) in
-                // TODO: Handle action
+                self.delegate?.poDetailController(self, didFinishWithAction: .rejected)
             })
         }))
-        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("poActionCancel", comment: ""), style: .cancel))
+        if !presentedInSplitView {
+            actionSheet.addAction(UIAlertAction(title: NSLocalizedString("poActionCancel", comment: ""), style: .cancel))
+        }
         self.present(actionSheet, animated: true)
     }
     
@@ -100,4 +103,12 @@ class PODetailViewController: UITableViewController {
         tableView.tableHeaderView = header
     }
 
+}
+
+// MARK: - Purchase Order Detail View Controller Delegate
+
+protocol PODetailViewControllerDelegate {
+    
+    func poDetailController(_ poDetailController: PODetailViewController, didFinishWithAction action: PurchaseOrderAction)
+    
 }

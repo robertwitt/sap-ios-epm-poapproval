@@ -10,7 +10,7 @@ import UIKit
 import SAPFiori
 import SAPOData
 
-class POInboxViewController: UITableViewController {
+class POInboxViewController: UITableViewController, PODetailViewControllerDelegate {
     
     // MARK: Properties
     
@@ -85,6 +85,7 @@ class POInboxViewController: UITableViewController {
         let purchaseOrder = purchaseOrders[indexPath.row]
         let poDetailStoryboard = UIStoryboard(name: "PODetail", bundle: nil)
         let poDetailViewController = poDetailStoryboard.instantiateViewController(withIdentifier: "PODetail") as! PODetailViewController
+        poDetailViewController.delegate = self
         poDetailViewController.purchaseOrderID = purchaseOrder.poid
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let rightNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "RightNavigationController") as! UINavigationController
@@ -141,6 +142,30 @@ class POInboxViewController: UITableViewController {
             self.refreshTitle()
         }
         completion(success)
+    }
+    
+}
+
+// MARK: - Purchase Order Detail View Controller Delegate
+
+extension POInboxViewController {
+    
+    func poDetailController(_ poDetailController: PODetailViewController, didFinishWithAction action: PurchaseOrderAction) {
+        // Remove the details view controller
+        if presentedInSplitView {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let rightNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "RightNavigationController") as! UINavigationController
+            rightNavigationController.viewControllers = []
+            splitViewController?.showDetailViewController(rightNavigationController, sender: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+        
+        // Remove the selected row
+        let indexPath = tableView.indexPathForSelectedRow!
+        print(indexPath)
+        purchaseOrders.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
 }
