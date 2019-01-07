@@ -14,12 +14,7 @@ class PODetailViewController: UITableViewController {
     
     // MARK: Properties
     
-    var purchaseOrderID: String? {
-        didSet {
-            refreshDetail()
-        }
-    }
-    
+    var purchaseOrderID: String?
     var purchaseOrder: PurchaseOrder?
 
     // MARK: View Lifecycle
@@ -51,13 +46,31 @@ class PODetailViewController: UITableViewController {
     }
     */
     
+    // MARK: IB Actions
+    
+    @IBAction func actionButtonPressed(_ sender: UIBarButtonItem) {
+        let actionSheet = UIAlertController(title: NSLocalizedString("poActionSheetTitle", comment: ""), message: nil, preferredStyle: .actionSheet)
+        actionSheet.popoverPresentationController?.barButtonItem = sender
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("poActionApprove", comment: ""), style: .default, handler: { (action) in
+            let actionController = POActionController(viewController: self)
+            actionController.approvePurchaseOrder(self.purchaseOrder!, completion: { (success, error) in
+                // TODO: Handle action
+            })
+        }))
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("poActionReject", comment: ""), style: .destructive, handler: { (action) in
+            let actionController = POActionController(viewController: self)
+            actionController.rejectPurchaseOrder(self.purchaseOrder!, completion: { (success, error) in
+                // TODO: Handle action
+            })
+        }))
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("poActionCancel", comment: ""), style: .cancel))
+        self.present(actionSheet, animated: true)
+    }
+    
     // MARK: Data Access
     
     private func refreshDetail() {
         guard let purchaseOrderID = purchaseOrderID else {
-            return
-        }
-        guard tableView != nil else {
             return
         }
         

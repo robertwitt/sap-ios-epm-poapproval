@@ -85,7 +85,6 @@ class POInboxViewController: UITableViewController {
         let purchaseOrder = purchaseOrders[indexPath.row]
         let poDetailStoryboard = UIStoryboard(name: "PODetail", bundle: nil)
         let poDetailViewController = poDetailStoryboard.instantiateViewController(withIdentifier: "PODetail") as! PODetailViewController
-        poDetailViewController.title = NSLocalizedString("poDetailTitle", comment: "")
         poDetailViewController.purchaseOrderID = purchaseOrder.poid
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let rightNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "RightNavigationController") as! UINavigationController

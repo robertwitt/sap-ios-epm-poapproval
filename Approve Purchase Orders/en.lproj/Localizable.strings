@@ -13,9 +13,10 @@
 "poItemCount" = "%d Items";
 "poActionApprove" = "Approve";
 "poActionReject" = "Reject";
+"poActionCancel" = "Cancel";
 "poToastApprove" = "PO %@ approved";
 "poToastReject" = "PO %@ rejected";
-"poDetailTitle" = "Purchase Order";
+"poActionSheetTitle" = "Actions";
 "noteAlertTitle" = "Add Note";
 "noteAlertPlaceholderOptional" = "Optional";
 "noteAlertPlaceholderMandatory" = "Mandatory";

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Detail View Controller-->
+        <!--Purchase Order-->
         <scene sceneID="kIA-s1-AUv">
             <objects>
                 <tableViewController storyboardIdentifier="PODetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X81-Po-Mia" customClass="PODetailViewController" customModule="Approve_Purchase_Orders" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,6 +22,16 @@
                             <outlet property="delegate" destination="X81-Po-Mia" id="SL1-hh-173"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Purchase Order" id="gmG-OW-3Q7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="3Hi-7e-gPF">
+                            <connections>
+                                <action selector="actionButtonPressed:" destination="X81-Po-Mia" id="5MW-Ml-q04"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5r-5M-qY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
