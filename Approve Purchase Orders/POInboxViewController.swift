@@ -70,13 +70,15 @@ class POInboxViewController: UITableViewController, PODetailViewControllerDelega
                 self.handlePOAction(at: indexPath, success: success, error: error, completion: completion)
             })
         }))
-        actions.append(UIContextualAction(style: .normal, title: NSLocalizedString("poActionApprove", comment: ""), handler: { (action, view, completion) in
+        let approveAction = UIContextualAction(style: .destructive, title: NSLocalizedString("poActionApprove", comment: ""), handler: { (action, view, completion) in
             let purchaseOrder = self.purchaseOrders[indexPath.row]
             let actionController = POActionController(viewController: self)
             actionController.approvePurchaseOrder(purchaseOrder, completion: { (success, error) in
                 self.handlePOAction(at: indexPath, success: success, error: error, completion: completion)
             })
-        }))
+        })
+        approveAction.backgroundColor = UIColor.preferredFioriColor(forStyle: FUIColorStyle.positive)
+        actions.append(approveAction)
         
         return UISwipeActionsConfiguration(actions: actions)
     }
@@ -113,7 +115,6 @@ class POInboxViewController: UITableViewController, PODetailViewControllerDelega
             }
             self.purchaseOrders = purchaseOrders ?? [PurchaseOrder]()
             self.refreshTitle()
-            self.refreshBadgeNumber()
             self.refreshControl?.endRefreshing()
             self.tableView.reloadData()
             loadingIndicator.dismiss()
@@ -122,9 +123,6 @@ class POInboxViewController: UITableViewController, PODetailViewControllerDelega
     
     private func refreshTitle() {
         title = String(format: NSLocalizedString("poInboxTitleWithCount", comment: ""), purchaseOrders.count)
-    }
-    
-    private func refreshBadgeNumber() {
         UIApplication.shared.applicationIconBadgeNumber = self.purchaseOrders.count
     }
     
@@ -161,7 +159,7 @@ extension POInboxViewController {
         print(indexPath)
         purchaseOrders.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
-        refreshBadgeNumber()
+        refreshTitle()
     }
     
 }
