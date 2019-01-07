@@ -182,12 +182,21 @@
 			name = internal;
 			sourceTree = "<group>";
 		};
+		4B82CE9721E3F25000F0BA21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
+				4B6C757C21E0F48E009B2068 /* PODetail.storyboard */,
+				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		7532C1BB1D5B6917004B03AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				12E07EF11E96851800460A94 /* CollectionType.swift */,
 				4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */,
-				4B6C757221E047E8009B2068 /* Formatter.swift */,
 				4B6C757421E048D3009B2068 /* PurchaseOrderExtension.swift */,
 				4B82CE9521E3DF2100F0BA21 /* PurchaseOrderAction.swift */,
 			);
@@ -199,6 +208,7 @@
 			children = (
 				7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */,
 				7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */,
+				4B6C757221E047E8009B2068 /* Formatter.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -211,6 +221,7 @@
 				2578BCD655AD663856D88892 /* PurchaseOrderItem */,
 				E7ACAFC312F612ED516CFE9E /* Supplier */,
 				C9993417906BCC51D75838C4 /* PurchaseOrder */,
+				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
 				4B6C756921E03233009B2068 /* ViewControllerExtension.swift */,
 				4B6C757021E0357B009B2068 /* POInboxViewController.swift */,
 				4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */,
@@ -251,13 +262,10 @@
 			children = (
 				12D066CB1F4DDAE40075EBA4 /* Onboarding */,
 				7532C1BB1D5B6917004B03AF /* Model */,
-				75AC42C81DAF80C000B445FF /* ViewControllers */,
 				75D373EF1DD1FB0800888D4C /* Proxy Classes */,
+				75AC42C81DAF80C000B445FF /* ViewControllers */,
+				4B82CE9721E3F25000F0BA21 /* Views */,
 				755C10B41D5C63B000ECF6A2 /* Utils */,
-				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
-				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
-				4B6C757C21E0F48E009B2068 /* PODetail.storyboard */,
-				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				7A1315C61D4B982000A5DA56 /* Info.plist */,
 				4B6C756F21E033E0009B2068 /* Localizable.strings */,
