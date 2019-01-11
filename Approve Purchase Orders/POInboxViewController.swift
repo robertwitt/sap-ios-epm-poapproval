@@ -20,10 +20,14 @@ class POInboxViewController: UITableViewController, PODetailViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
+        refreshInbox()
+    }
+    
+    private func configureTableView() {
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableView.automaticDimension
-        refreshInbox()
     }
 
     // MARK: Table View Data Source
