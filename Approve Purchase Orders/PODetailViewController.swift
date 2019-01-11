@@ -56,6 +56,9 @@ class PODetailViewController: UITableViewController {
     // MARK: Table View Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        guard let _ = purchaseOrder else {
+            return 0
+        }
         return TableViewSection.count
     }
 
@@ -107,6 +110,7 @@ class PODetailViewController: UITableViewController {
             cell.keyName = NSLocalizedString("poDeliveryAddress", comment: "")
             cell.value = purchaseOrder.deliveryAddress ?? ""
         }
+        cell.isEditable = false
         return cell
     }
     
