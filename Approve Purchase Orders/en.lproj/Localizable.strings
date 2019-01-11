@@ -26,4 +26,5 @@
 "poDetailTitleItems" = "Items";
 "poID" = "Purchase Order ID";
 "poDeliveryDate" = "Delivery Date";
+"poDeliveryDateEarliest" = "%@ or later";
 "poDeliveryAddress" = "Delivery Address";

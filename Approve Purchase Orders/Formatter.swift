@@ -30,4 +30,12 @@ class Formatter {
         return String(format: NSLocalizedString("formattedTimeAgo", comment: ""), timeString)
     }
     
+    func format(date: Date, dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = dateStyle
+        dateFormatter.timeStyle = timeStyle
+        dateFormatter.locale = Locale.current
+        return dateFormatter.string(from: date)
+    }
+    
 }

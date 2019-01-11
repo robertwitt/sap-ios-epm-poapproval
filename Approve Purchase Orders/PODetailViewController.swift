@@ -102,7 +102,7 @@ class PODetailViewController: UITableViewController {
             cell.value = purchaseOrder.poid!
         case .deliveryDate:
             cell.keyName = NSLocalizedString("poDeliveryDate", comment: "")
-            cell.value = purchaseOrder.deliveryDateEarliest?.toString() ?? ""
+            cell.value = String(format: NSLocalizedString("poDeliveryDateEarliest", comment: ""), purchaseOrder.formattedEarliestDeliveryDate ?? "")
         case .deliveryAddress:
             cell.keyName = NSLocalizedString("poDeliveryAddress", comment: "")
             cell.value = purchaseOrder.deliveryAddress ?? ""

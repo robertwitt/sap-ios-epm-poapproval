@@ -24,4 +24,11 @@ extension PurchaseOrder {
         return Formatter().format(date: changedAt.toDate())
     }
     
+    var formattedEarliestDeliveryDate: String? {
+        guard let deliveryDate = deliveryDateEarliest else {
+            return nil
+        }
+        return Formatter().format(date: deliveryDate.toDate(), dateStyle: .medium, timeStyle: .none)
+    }
+    
 }
