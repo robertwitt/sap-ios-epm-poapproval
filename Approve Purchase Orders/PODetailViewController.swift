@@ -60,8 +60,12 @@ class PODetailViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        switch TableViewSection(rawValue: section)! {
+        case .generalInformation:
+            return TableViewInfoRow.count
+        case .items:
+            return 0
+        }
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -77,15 +81,34 @@ class PODetailViewController: UITableViewController {
         return header
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        switch TableViewSection(rawValue: indexPath.section)! {
+        case .generalInformation:
+            return infoCellForAtIndexPath(indexPath)
+        case .items:
+            return UITableViewCell()
+        }
+    }
+    
+    private func infoCellForAtIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FUIKeyValueFormCell.reuseIdentifier, for: indexPath) as! FUIKeyValueFormCell
+        guard let purchaseOrder = purchaseOrder else {
+            return cell
+        }
+        
+        switch TableViewInfoRow(rawValue: indexPath.row)! {
+        case .id:
+            cell.keyName = NSLocalizedString("poID", comment: "")
+            cell.value = purchaseOrder.poid!
+        case .deliveryDate:
+            cell.keyName = NSLocalizedString("poDeliveryDate", comment: "")
+            cell.value = purchaseOrder.deliveryDateEarliest?.toString() ?? ""
+        case .deliveryAddress:
+            cell.keyName = NSLocalizedString("poDeliveryAddress", comment: "")
+            cell.value = purchaseOrder.deliveryAddress ?? ""
+        }
         return cell
     }
-    */
     
     // MARK: IB Actions
     
