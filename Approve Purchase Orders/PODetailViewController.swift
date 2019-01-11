@@ -44,13 +44,6 @@ class PODetailViewController: UITableViewController {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
-        
-        let header = FUIObjectHeader()
-        header.headlineText = " "
-        header.subheadlineText = " "
-        header.footnoteText = " "
-        header.statusText = " "
-        tableView.tableHeaderView = header
     }
 
     // MARK: Table View Data Source
@@ -160,6 +153,9 @@ class PODetailViewController: UITableViewController {
     }
     
     private func refreshHeader() {
+        if tableView.tableHeaderView == nil {
+            tableView.tableHeaderView = FUIObjectHeader()
+        }
         guard let header = tableView.tableHeaderView as? FUIObjectHeader else {
             return
         }
