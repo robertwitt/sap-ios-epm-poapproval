@@ -12,6 +12,19 @@ import SAPOData
 
 class PODetailViewController: UITableViewController {
     
+    private enum TableViewSection: Int {
+        case generalInformation = 0
+        case items = 1
+        static let count = 2
+    }
+    
+    private enum TableViewInfoRow: Int {
+        case id = 0
+        case deliveryDate = 1
+        case deliveryAddress = 2
+        static let count = 3
+    }
+    
     // MARK: Properties
     
     var delegate: PODetailViewControllerDelegate?
@@ -22,19 +35,46 @@ class PODetailViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         refreshDetail()
+    }
+    
+    private func configureTableView() {
+        tableView.register(FUIKeyValueFormCell.self, forCellReuseIdentifier: FUIKeyValueFormCell.reuseIdentifier)
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
+        
+        let header = FUIObjectHeader()
+        header.headlineText = " "
+        header.subheadlineText = " "
+        header.footnoteText = " "
+        header.statusText = " "
+        tableView.tableHeaderView = header
     }
 
     // MARK: Table View Data Source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return TableViewSection.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = FUITableViewHeaderFooterView(style: .title)
+        switch TableViewSection(rawValue: section)! {
+        case .generalInformation:
+            header.titleLabel.text = NSLocalizedString("poDetailTitleInfo", comment: "")
+            break
+        case .items:
+            header.titleLabel.text = NSLocalizedString("poDetailTitleItems", comment: "")
+            break
+        }
+        return header
     }
 
     /*
@@ -93,14 +133,15 @@ class PODetailViewController: UITableViewController {
     }
     
     private func refreshHeader() {
-        let header = FUIObjectHeader()
+        guard let header = tableView.tableHeaderView as? FUIObjectHeader else {
+            return
+        }
         header.headlineText = purchaseOrder?.supplierName
         if let orderedByName = purchaseOrder?.orderedByName {
             header.subheadlineText = String(format: NSLocalizedString("poOrderedByWithName", comment: ""), orderedByName)
         }
         header.footnoteText = purchaseOrder?.formattedChangedAt
         header.statusText = purchaseOrder?.formattedGrossAmount
-        tableView.tableHeaderView = header
     }
 
 }

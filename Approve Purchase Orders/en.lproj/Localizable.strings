@@ -21,4 +21,9 @@
 "noteAlertPlaceholderOptional" = "Optional";
 "noteAlertPlaceholderMandatory" = "Mandatory";
 "noteAlertButtonOK" = "OK";
-"noteAlertButtonCancel" = "Cancel";"
+"noteAlertButtonCancel" = "Cancel";
+"poDetailTitleInfo" = "General Information";
+"poDetailTitleItems" = "Items";
+"poID" = "Purchase Order ID";
+"poDeliveryDate" = "Delivery Date";
+"poDeliveryAddress" = "Delivery Address";
