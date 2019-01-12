@@ -67,6 +67,7 @@ class PODetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = FUITableViewHeaderFooterView(style: .title)
+        header.setBackgroundColor(UIColor.preferredFioriColor(forStyle: FUIColorStyle.tintColor, background: .dark))
         switch TableViewSection(rawValue: section)! {
         case .generalInformation:
             header.titleLabel.text = NSLocalizedString("poDetailTitleInfo", comment: "")
@@ -88,23 +89,26 @@ class PODetailViewController: UITableViewController {
     }
     
     private func infoCellForRowAtIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FUIKeyValueFormCell.reuseIdentifier, for: indexPath) as! FUIKeyValueFormCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PODetailInfo", for: indexPath)
         guard let purchaseOrder = purchaseOrder else {
             return cell
         }
         
+        cell.detailTextLabel?.textColor = UIColor.preferredFioriColor(forStyle: .primary3)
         switch TableViewInfoRow(rawValue: indexPath.row)! {
         case .id:
-            cell.keyName = NSLocalizedString("poID", comment: "")
-            cell.value = purchaseOrder.poid!
+            cell.textLabel?.text = NSLocalizedString("poID", comment: "")
+            cell.detailTextLabel?.text = purchaseOrder.poid!
+            break
         case .deliveryDate:
-            cell.keyName = NSLocalizedString("poDeliveryDate", comment: "")
-            cell.value = String(format: NSLocalizedString("poDeliveryDateEarliest", comment: ""), purchaseOrder.formattedEarliestDeliveryDate ?? "")
+            cell.textLabel?.text = NSLocalizedString("poDeliveryDate", comment: "")
+            cell.detailTextLabel?.text = String(format: NSLocalizedString("poDeliveryDateEarliest", comment: ""), purchaseOrder.formattedEarliestDeliveryDate ?? "")
+            break
         case .deliveryAddress:
-            cell.keyName = NSLocalizedString("poDeliveryAddress", comment: "")
-            cell.value = purchaseOrder.deliveryAddress ?? ""
+            cell.textLabel?.text = NSLocalizedString("poDeliveryAddress", comment: "")
+            cell.detailTextLabel?.text = purchaseOrder.deliveryAddress ?? ""
+            break
         }
-        cell.isEditable = false
         return cell
     }
     
