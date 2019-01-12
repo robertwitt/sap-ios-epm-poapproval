@@ -41,7 +41,8 @@ class PODetailViewController: UITableViewController {
     
     private func configureTableView() {
         tableView.register(FUIKeyValueFormCell.self, forCellReuseIdentifier: FUIKeyValueFormCell.reuseIdentifier)
-        tableView.estimatedRowHeight = 44
+        tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
+        tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
     }
@@ -60,7 +61,7 @@ class PODetailViewController: UITableViewController {
         case .generalInformation:
             return TableViewInfoRow.count
         case .items:
-            return 0
+            return purchaseOrder?.purchaseOrderItems.count ?? 0
         }
     }
     
@@ -80,13 +81,13 @@ class PODetailViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch TableViewSection(rawValue: indexPath.section)! {
         case .generalInformation:
-            return infoCellForAtIndexPath(indexPath)
+            return infoCellForRowAtIndexPath(indexPath)
         case .items:
-            return UITableViewCell()
+            return itemCellForRowAtIndexPath(indexPath)
         }
     }
     
-    private func infoCellForAtIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
+    private func infoCellForRowAtIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FUIKeyValueFormCell.reuseIdentifier, for: indexPath) as! FUIKeyValueFormCell
         guard let purchaseOrder = purchaseOrder else {
             return cell
@@ -104,6 +105,22 @@ class PODetailViewController: UITableViewController {
             cell.value = purchaseOrder.deliveryAddress ?? ""
         }
         cell.isEditable = false
+        return cell
+    }
+    
+    private func itemCellForRowAtIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier, for: indexPath) as! FUIObjectTableViewCell
+        guard let item = purchaseOrder?.purchaseOrderItems[indexPath.row] else {
+            return cell
+        }
+        
+        cell.headlineText = item.product
+        cell.subheadlineText = item.poItemPos
+        cell.footnoteText = item.deliveryDate?.toString()
+        cell.descriptionText = "Supplier information"
+        cell.statusText = item.grossAmount?.toString()
+        cell.substatusText = item.quantity?.toString()
+        cell.splitPercent = CGFloat(0.3)
         return cell
     }
     
