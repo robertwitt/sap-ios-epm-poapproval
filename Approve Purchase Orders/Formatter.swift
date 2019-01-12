@@ -18,6 +18,17 @@ class Formatter {
         return formatter.string(from: amount)
     }
     
+    func format(quantity: NSNumber, quantityUnit: String) -> String? {
+        let formatter = NumberFormatter()
+        formatter.locale = Locale.current
+        formatter.numberStyle = .decimal
+        if let formattedQuantity = formatter.string(from: quantity) {
+            return "\(formattedQuantity) \(quantityUnit)"
+        } else {
+            return nil
+        }
+    }
+    
     func format(date: Date) -> String? {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .full

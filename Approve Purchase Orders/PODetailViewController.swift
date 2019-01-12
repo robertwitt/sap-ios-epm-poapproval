@@ -116,10 +116,13 @@ class PODetailViewController: UITableViewController {
         
         cell.headlineText = item.product
         cell.subheadlineText = item.poItemPos
-        cell.footnoteText = item.deliveryDate?.toString()
-        cell.descriptionText = "Supplier information"
-        cell.statusText = item.grossAmount?.toString()
-        cell.substatusText = item.quantity?.toString()
+        if let formattedDeliveryDate = item.formattedDeliveryDate {
+            cell.footnoteText = String(format: NSLocalizedString("poItemDeliveryDate", comment: ""), formattedDeliveryDate)
+        }
+        cell.statusText = item.formattedGrossAmount
+        if let formattedPrice = item.formattedPrice, let formattedQuantity = item.formattedQuantity {
+            cell.substatusText = String(format: NSLocalizedString("poItemPriceAndQuantity", comment: ""), formattedPrice, formattedQuantity)
+        }
         cell.splitPercent = CGFloat(0.3)
         return cell
     }
