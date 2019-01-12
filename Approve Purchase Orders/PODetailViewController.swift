@@ -22,7 +22,8 @@ class PODetailViewController: UITableViewController {
         case id = 0
         case deliveryDate = 1
         case deliveryAddress = 2
-        static let count = 3
+        case supplier = 3
+        static let count = 4
     }
     
     // MARK: Properties
@@ -44,7 +45,6 @@ class PODetailViewController: UITableViewController {
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorStyle = .none
     }
 
     // MARK: Table View Data Source
@@ -107,6 +107,11 @@ class PODetailViewController: UITableViewController {
         case .deliveryAddress:
             cell.textLabel?.text = NSLocalizedString("poDeliveryAddress", comment: "")
             cell.detailTextLabel?.text = purchaseOrder.deliveryAddress ?? ""
+            break
+        case .supplier:
+            cell.textLabel?.text = NSLocalizedString("poSupplier", comment: "")
+            cell.detailTextLabel?.text = purchaseOrder.supplierName ?? ""
+            cell.accessoryType = .detailButton
             break
         }
         return cell
