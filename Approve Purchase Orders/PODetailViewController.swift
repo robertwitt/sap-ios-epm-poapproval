@@ -136,6 +136,36 @@ class PODetailViewController: UITableViewController {
         return cell
     }
     
+    // MARK: Table View Delegate
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        switch TableViewSection(rawValue: indexPath.section)! {
+        case .generalInformation:
+            switch TableViewInfoRow(rawValue: indexPath.row)! {
+            case .supplier:
+                supplierAccessoryButtonTapped(accessoryButton: tableView.cellForRow(at: indexPath))
+                break
+            default:
+                break
+            }
+            break
+        default:
+            break
+        }
+    }
+    
+    private func supplierAccessoryButtonTapped(accessoryButton: UIView?) {
+        let poDetailStoryboard = UIStoryboard(name: "PODetail", bundle: nil)
+        let supplierViewController = poDetailStoryboard.instantiateViewController(withIdentifier: "Supplier") as! SupplierViewController
+        supplierViewController.supplierID = purchaseOrder?.supplierID
+        let navigationController = UINavigationController(rootViewController: supplierViewController)
+        navigationController.modalPresentationStyle = .popover
+        let popoverController = navigationController.popoverPresentationController!
+        popoverController.permittedArrowDirections = .any
+        popoverController.sourceView = accessoryButton
+        present(navigationController, animated: true)
+    }
+    
     // MARK: IB Actions
     
     @IBAction func actionButtonPressed(_ sender: UIBarButtonItem) {

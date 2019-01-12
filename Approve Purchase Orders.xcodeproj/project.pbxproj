@@ -25,6 +25,7 @@
 		476637CE9C4F30F9A5595E8C /* PurchaseOrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */; };
 		4A1029D0A673428CCEFE9488 /* EPMREFAPPSPOAPVSRVEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9BAA9648F00B75BC35FC0D /* EPMREFAPPSPOAPVSRVEntities.swift */; };
 		4B14825C21EA451B00106FA1 /* PurchaseOrderItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14825B21EA451B00106FA1 /* PurchaseOrderItemExtension.swift */; };
+		4B14825E21EA53A100106FA1 /* SupplierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B14825D21EA53A100106FA1 /* SupplierViewController.swift */; };
 		4B6C756A21E03233009B2068 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C756921E03233009B2068 /* ViewControllerExtension.swift */; };
 		4B6C756D21E033E0009B2068 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B6C756F21E033E0009B2068 /* Localizable.strings */; };
 		4B6C757121E0357B009B2068 /* POInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757021E0357B009B2068 /* POInboxViewController.swift */; };
@@ -96,6 +97,7 @@
 		184C7E38FA1DE0EBD356EA3C /* PurchaseOrder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrder.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrder.swift"; sourceTree = "<group>"; };
 		4144546D7AC5BA85AF2BEBC4 /* EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/internal/EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift"; sourceTree = "<group>"; };
 		4B14825B21EA451B00106FA1 /* PurchaseOrderItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderItemExtension.swift; sourceTree = "<group>"; };
+		4B14825D21EA53A100106FA1 /* SupplierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierViewController.swift; sourceTree = "<group>"; };
 		4B6C756921E03233009B2068 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		4B6C756E21E033E0009B2068 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4B6C757021E0357B009B2068 /* POInboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POInboxViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				4B6C757021E0357B009B2068 /* POInboxViewController.swift */,
 				4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */,
 				4B6C757821E05F53009B2068 /* POActionController.swift */,
+				4B14825D21EA53A100106FA1 /* SupplierViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */,
 				4B82CE9621E3DF2100F0BA21 /* PurchaseOrderAction.swift in Sources */,
 				5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */,
+				4B14825E21EA53A100106FA1 /* SupplierViewController.swift in Sources */,
 				A25E6865D0330D13583A2CD0 /* EPMREFAPPSPOAPVSRVEntitiesMetadataParser.swift in Sources */,
 				4B6C757B21E0F2F2009B2068 /* PODetailViewController.swift in Sources */,
 				37C1607BBBF5B805EF217A99 /* EPMREFAPPSPOAPVSRVEntitiesMetadataText.swift in Sources */,
