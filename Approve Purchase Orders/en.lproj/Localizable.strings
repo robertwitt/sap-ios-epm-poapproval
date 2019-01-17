@@ -29,5 +29,9 @@
 "poDeliveryDateEarliest" = "%@ or later";
 "poDeliveryAddress" = "Delivery Address";
 "poSupplier" = "Supplier";
+"poSupplierEmail" = "Email";
+"poSupplierPhone" = "Phone";
+"poSupplierFax" = "Fax";
+"poSupplierAddress" = "Address";
 "poItemDeliveryDate" = "Delivery on %@";
 "poItemPriceAndQuantity" = "%@ / %@";

@@ -12,6 +12,14 @@ import SAPOData
 
 class SupplierViewController: UITableViewController {
     
+    private enum TableViewRow: Int {
+        case email = 0
+        case phone = 1
+        case fax = 2
+        case address = 3
+        static let count = 4
+    }
+    
     // MARK: Properties
     
     var supplierID: String?
@@ -40,29 +48,38 @@ class SupplierViewController: UITableViewController {
         tableView.estimatedRowHeight = 98
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
+        tableView.register(FUIKeyValueFormCell.self, forCellReuseIdentifier: FUIKeyValueFormCell.reuseIdentifier)
     }
 
     // MARK: Table View Data Source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return TableViewRow.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: FUIKeyValueFormCell.reuseIdentifier, for: indexPath) as! FUIKeyValueFormCell
+        switch TableViewRow(rawValue: indexPath.row)! {
+        case .email:
+            cell.keyName = NSLocalizedString("poSupplierEmail", comment: "")
+            cell.value = supplier?.contactEmail ?? ""
+            break
+        case .phone:
+            cell.keyName = NSLocalizedString("poSupplierPhone", comment: "")
+            cell.value = supplier?.contactPhone ?? ""
+            break
+        case .fax:
+            cell.keyName = NSLocalizedString("poSupplierFax", comment: "")
+            cell.value = supplier?.contactFax ?? ""
+            break
+        case .address:
+            cell.keyName = NSLocalizedString("poSupplierAddress", comment: "")
+            cell.value = supplier?.formattedAddress ?? ""
+            cell.isAutoFitting = true
+            break
+        }
         return cell
     }
-    */
     
     // MARK: Actions
     
