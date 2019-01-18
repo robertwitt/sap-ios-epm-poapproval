@@ -36,6 +36,8 @@
 		4B6C757B21E0F2F2009B2068 /* PODetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */; };
 		4B6C757D21E0F48E009B2068 /* PODetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6C757C21E0F48E009B2068 /* PODetail.storyboard */; };
 		4B82CE9621E3DF2100F0BA21 /* PurchaseOrderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82CE9521E3DF2100F0BA21 /* PurchaseOrderAction.swift */; };
+		4BBBF5F021F2714800001080 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF5EE21F2714800001080 /* MapCell.swift */; };
+		4BBBF5F121F2714800001080 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBBF5EF21F2714800001080 /* MapCell.xib */; };
 		4C1518F617AF29F1F949D86B /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E50382CA6B0BE83E9A087 /* Supplier.swift */; };
 		5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391D6B7C4C6B57144A96CD /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift */; };
 		618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA23C5372E5A49744F6735 /* PurchaseOrderDetailViewController.swift */; };
@@ -108,6 +110,8 @@
 		4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODetailViewController.swift; sourceTree = "<group>"; };
 		4B6C757C21E0F48E009B2068 /* PODetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PODetail.storyboard; sourceTree = "<group>"; };
 		4B82CE9521E3DF2100F0BA21 /* PurchaseOrderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderAction.swift; sourceTree = "<group>"; };
+		4BBBF5EE21F2714800001080 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
+		4BBBF5EF21F2714800001080 /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
 		568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionImportResult.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/FunctionImportResult.swift"; sourceTree = "<group>"; };
 		5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrderItem.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrderItem.swift"; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
 				4B6C757C21E0F48E009B2068 /* PODetail.storyboard */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
+				4BBBF5EE21F2714800001080 /* MapCell.swift */,
+				4BBBF5EF21F2714800001080 /* MapCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 			files = (
 				7A16F06D1FD1B3C700D2FABD /* README.md in Resources */,
 				7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */,
+				4BBBF5F121F2714800001080 /* MapCell.xib in Resources */,
 				12D066CF1F4DDB0E0075EBA4 /* ConfigurationProvider.plist in Resources */,
 				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
 				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
@@ -427,6 +434,7 @@
 				11DB7FA46140E7956924FFD8 /* EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift in Sources */,
 				4A1029D0A673428CCEFE9488 /* EPMREFAPPSPOAPVSRVEntities.swift in Sources */,
 				D58F99423286D0001CB92E01 /* PurchaseOrder.swift in Sources */,
+				4BBBF5F021F2714800001080 /* MapCell.swift in Sources */,
 				122D7C339ACDFAAEEB4E5917 /* EPMREFAPPSPOAPVSRVEntitiesMetadata.swift in Sources */,
 				476637CE9C4F30F9A5595E8C /* PurchaseOrderItem.swift in Sources */,
 				40EB95D1FE60DAE2091BE05F /* FunctionImportResult.swift in Sources */,

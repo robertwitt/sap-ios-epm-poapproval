@@ -17,7 +17,8 @@ class SupplierViewController: UITableViewController {
         case phone = 1
         case fax = 2
         case address = 3
-        static let count = 4
+        case map = 4
+        static let count = 5
     }
     
     // MARK: Properties
@@ -49,6 +50,7 @@ class SupplierViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.register(FUIKeyValueFormCell.self, forCellReuseIdentifier: FUIKeyValueFormCell.reuseIdentifier)
+        tableView.register(UINib(nibName: "MapCell", bundle: nil), forCellReuseIdentifier: MapCell.reuseIdentifier)
     }
 
     // MARK: Table View Data Source
@@ -58,7 +60,18 @@ class SupplierViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch TableViewRow(rawValue: indexPath.row)! {
+        case .map:
+            return mapCellForRowAtIndexPath(indexPath)
+        default:
+            return keyValueCellForRowAtIndexPath(indexPath)
+        }
+    }
+    
+    private func keyValueCellForRowAtIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FUIKeyValueFormCell.reuseIdentifier, for: indexPath) as! FUIKeyValueFormCell
+        cell.isEditable = false
+        cell.isAutoFitting = true
         switch TableViewRow(rawValue: indexPath.row)! {
         case .email:
             cell.keyName = NSLocalizedString("poSupplierEmail", comment: "")
@@ -75,9 +88,17 @@ class SupplierViewController: UITableViewController {
         case .address:
             cell.keyName = NSLocalizedString("poSupplierAddress", comment: "")
             cell.value = supplier?.formattedAddress ?? ""
-            cell.isAutoFitting = true
+            break
+        default:
             break
         }
+        return cell
+    }
+    
+    private func mapCellForRowAtIndexPath(_ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MapCell.reuseIdentifier, for: indexPath) as! MapCell
+        cell.address = supplier?.formattedAddress
+        print(cell.mapView)
         return cell
     }
     
