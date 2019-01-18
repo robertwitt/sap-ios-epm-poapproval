@@ -38,6 +38,8 @@
 		4B82CE9621E3DF2100F0BA21 /* PurchaseOrderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82CE9521E3DF2100F0BA21 /* PurchaseOrderAction.swift */; };
 		4BBBF5F021F2714800001080 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF5EE21F2714800001080 /* MapCell.swift */; };
 		4BBBF5F121F2714800001080 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBBF5EF21F2714800001080 /* MapCell.xib */; };
+		4BBBF5F321F27F2000001080 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF5F221F27F2000001080 /* MapViewExtension.swift */; };
+		4BBBF5F521F2800E00001080 /* SupplierAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF5F421F2800E00001080 /* SupplierAnnotationView.swift */; };
 		4C1518F617AF29F1F949D86B /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E50382CA6B0BE83E9A087 /* Supplier.swift */; };
 		5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391D6B7C4C6B57144A96CD /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift */; };
 		618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA23C5372E5A49744F6735 /* PurchaseOrderDetailViewController.swift */; };
@@ -112,6 +114,8 @@
 		4B82CE9521E3DF2100F0BA21 /* PurchaseOrderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderAction.swift; sourceTree = "<group>"; };
 		4BBBF5EE21F2714800001080 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		4BBBF5EF21F2714800001080 /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
+		4BBBF5F221F27F2000001080 /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
+		4BBBF5F421F2800E00001080 /* SupplierAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierAnnotationView.swift; sourceTree = "<group>"; };
 		568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionImportResult.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/FunctionImportResult.swift"; sourceTree = "<group>"; };
 		5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrderItem.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrderItem.swift"; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				4BBBF5EE21F2714800001080 /* MapCell.swift */,
 				4BBBF5EF21F2714800001080 /* MapCell.xib */,
+				4BBBF5F221F27F2000001080 /* MapViewExtension.swift */,
+				4BBBF5F421F2800E00001080 /* SupplierAnnotationView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -421,6 +427,7 @@
 				4B6C757321E047E8009B2068 /* Formatter.swift in Sources */,
 				4B6C756A21E03233009B2068 /* ViewControllerExtension.swift in Sources */,
 				7A26CA1C1F31BA8800B156B6 /* CellCreationHelper.swift in Sources */,
+				4BBBF5F521F2800E00001080 /* SupplierAnnotationView.swift in Sources */,
 				12E07EF21E96851800460A94 /* CollectionType.swift in Sources */,
 				75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */,
 				7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */,
@@ -434,6 +441,7 @@
 				11DB7FA46140E7956924FFD8 /* EPMREFAPPSPOAPVSRVEntitiesStaticResolver.swift in Sources */,
 				4A1029D0A673428CCEFE9488 /* EPMREFAPPSPOAPVSRVEntities.swift in Sources */,
 				D58F99423286D0001CB92E01 /* PurchaseOrder.swift in Sources */,
+				4BBBF5F321F27F2000001080 /* MapViewExtension.swift in Sources */,
 				4BBBF5F021F2714800001080 /* MapCell.swift in Sources */,
 				122D7C339ACDFAAEEB4E5917 /* EPMREFAPPSPOAPVSRVEntitiesMetadata.swift in Sources */,
 				476637CE9C4F30F9A5595E8C /* PurchaseOrderItem.swift in Sources */,

@@ -11,16 +11,29 @@ import MapKit
 
 class MapCell: UITableViewCell {
     
-    // MARK: Properties & Outlets
-    var address: String?
+    var address: String? {
+        didSet {
+            refreshMapView()
+        }
+    }
     
     @IBOutlet weak var mapView: MKMapView!
     
     static let reuseIdentifier = "MapCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    private func refreshMapView() {
+        guard let address = address else {
+            return
+        }
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = address
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            if let response = response, let mapItem = response.mapItems.first {
+                self.mapView.addMapItem(mapItem)
+            }
+        }
     }
     
 }
