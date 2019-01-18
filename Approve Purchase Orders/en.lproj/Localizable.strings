@@ -8,6 +8,8 @@
 
 "formattedTimeAgo" = "%@ ago";
 "errorAlertTitle" = "Error";
+"alertTitle" = "Alert";
+"alertButtonOK" = "OK";
 "poInboxTitleWithCount" = "Purchase Orders (%d)";
 "poOrderedByWithName" = "Ordered by %@";
 "poItemCount" = "%d Items";
@@ -35,3 +37,5 @@
 "poSupplierAddress" = "Address";
 "poItemDeliveryDate" = "Delivery on %@";
 "poItemPriceAndQuantity" = "%@ / %@";
+"mailServicesUnavailable" = "Email services are not available";
+"mailSent" = "Email was sent";

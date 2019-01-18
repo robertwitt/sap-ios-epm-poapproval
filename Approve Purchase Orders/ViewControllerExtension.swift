@@ -23,7 +23,16 @@ extension UIViewController {
         let alert = UIAlertController(title: NSLocalizedString("errorAlertTitle", comment: ""),
                                       message: error.localizedDescription,
                                       preferredStyle: .alert)
-        self.present(alert, animated: true)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("alertButtonOK", comment: ""), style: .default))
+        present(alert, animated: true)
+    }
+    
+    func showAlert(withMessage message: String) {
+        let alert = UIAlertController(title: NSLocalizedString("alertTitle", comment: ""),
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("alertButtonOK", comment: ""), style: .default))
+        present(alert, animated: true)
     }
     
 }

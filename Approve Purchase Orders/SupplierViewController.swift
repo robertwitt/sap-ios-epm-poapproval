@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import MessageUI
 import SAPFiori
 import SAPOData
 
-class SupplierViewController: UITableViewController {
+class SupplierViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     private enum TableViewRow: Int {
         case email = 0
@@ -108,6 +109,17 @@ class SupplierViewController: UITableViewController {
         dismiss(animated: true)
     }
     
+    @objc func emailTapped(_ sender: UIButton) {
+        guard MFMailComposeViewController.canSendMail() else {
+            showAlert(withMessage: NSLocalizedString("mailServicesUnavailable", comment: ""))
+            return
+        }
+        
+        let mailComposer = MFMailComposeViewController()
+        mailComposer.mailComposeDelegate = self
+        mailComposer.setToRecipients([supplier!.contactEmail!])
+    }
+    
     // MARK: Data Access
     
     private func refreshSupplier() {
@@ -144,8 +156,24 @@ class SupplierViewController: UITableViewController {
         if supplier?.contactEmail != nil {
             activityControl.addActivity(.email)
             activityControl.activityItems[.email]?.setTintColor(color, for: .normal)
+            activityControl.activityItems[.email]?.addTarget(self, action: #selector(emailTapped(_:)), for: .touchUpInside)
         }
         profileHeader.detailContentView = activityControl
+    }
+    
+}
+
+// MARK: - Mail Compose View Controller Delegate
+
+extension SupplierViewController {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let error = error {
+            showAlert(withError: error)
+        }
+        if result == MFMailComposeResult.sent {
+            FUIToastMessage.show(message: NSLocalizedString("mailSent", comment: ""))
+        }
     }
     
 }
