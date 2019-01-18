@@ -11,7 +11,7 @@ import MessageUI
 import SAPFiori
 import SAPOData
 
-class SupplierViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class SupplierViewController: UITableViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate {
     
     private enum TableViewRow: Int {
         case email = 0
@@ -114,10 +114,19 @@ class SupplierViewController: UITableViewController, MFMailComposeViewController
             showAlert(withMessage: NSLocalizedString("mailServicesUnavailable", comment: ""))
             return
         }
-        
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         mailComposer.setToRecipients([supplier!.contactEmail!])
+    }
+    
+    @objc func messageTapped(_ sender: UIButton) {
+        guard MFMessageComposeViewController.canSendText() else {
+            showAlert(withMessage: NSLocalizedString("messageServicesUnavailable", comment: ""))
+            return
+        }
+        let messageComposer = MFMessageComposeViewController()
+        messageComposer.messageComposeDelegate = self
+        messageComposer.recipients = [supplier!.contactPhone!]
     }
     
     // MARK: Data Access
@@ -152,6 +161,7 @@ class SupplierViewController: UITableViewController, MFMailComposeViewController
             activityControl.addActivities([.phone, .message])
             activityControl.activityItems[.phone]?.setTintColor(color, for: .normal)
             activityControl.activityItems[.message]?.setTintColor(color, for: .normal)
+            activityControl.activityItems[.message]?.addTarget(self, action: #selector(messageTapped(_:)), for: .touchUpInside)
         }
         if supplier?.contactEmail != nil {
             activityControl.addActivity(.email)
@@ -171,8 +181,20 @@ extension SupplierViewController {
         if let error = error {
             showAlert(withError: error)
         }
-        if result == MFMailComposeResult.sent {
+        if result == .sent {
             FUIToastMessage.show(message: NSLocalizedString("mailSent", comment: ""))
+        }
+    }
+    
+}
+
+// MARK: - Message Compose View Controller Delegate
+
+extension SupplierViewController {
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        if result == .sent {
+            FUIToastMessage.show(message: NSLocalizedString("messageSent", comment: ""))
         }
     }
     

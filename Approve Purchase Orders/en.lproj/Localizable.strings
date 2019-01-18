@@ -39,3 +39,5 @@
 "poItemPriceAndQuantity" = "%@ / %@";
 "mailServicesUnavailable" = "Email services are not available";
 "mailSent" = "Email was sent";
+"messageServicesUnavailable" = "Messaging services are not available";
+"messageSent" = "Message was sent";
