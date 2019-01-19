@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SAPFiori
+import SAPOData
 
 class POActionController {
     
@@ -23,9 +24,14 @@ class POActionController {
         prepareNoteAlert(mandatory: false, cancelHandler: { (action) in
             completion(false, nil)
         }, okHandler: { (action) in
-            // TODO: Invoke backend
-            completion(true, nil)
-            FUIToastMessage.show(message: String(format: NSLocalizedString("poToastApprove", comment: ""), purchaseOrder.poid!))
+            let processingIndicator = FUIProcessingIndicatorView()
+            processingIndicator.show(animated: true)
+            processingIndicator.startAnimating(easeIn: true)
+            self.viewController.dataService.approvePurchaseOrder(poid: purchaseOrder.poid, note: self.noteAlert?.textFields?.first?.text, completionHandler: { (result, error) in
+                completion(result!.success!, error)
+                processingIndicator.stopAnimating(easeOut: true)
+                FUIToastMessage.show(message: String(format: NSLocalizedString("poToastApprove", comment: ""), purchaseOrder.poid!))
+            })
         })
         viewController.present(noteAlert!, animated: true)
     }
@@ -34,9 +40,14 @@ class POActionController {
         prepareNoteAlert(mandatory: true, cancelHandler: { (action) in
             completion(false, nil)
         }, okHandler: { (action) in
-            // TODO: Invoke backend
-            completion(true, nil)
-            FUIToastMessage.show(message: String(format: NSLocalizedString("poToastReject", comment: ""), purchaseOrder.poid!))
+            let processingIndicator = FUIProcessingIndicatorView()
+            processingIndicator.show(animated: true)
+            processingIndicator.startAnimating(easeIn: true)
+            self.viewController.dataService.rejectPurchaseOrder(poid: purchaseOrder.poid, note: self.noteAlert?.textFields?.first?.text, completionHandler: { (result, error) in
+                completion(result!.success!, error)
+                processingIndicator.stopAnimating(easeOut: true)
+                FUIToastMessage.show(message: String(format: NSLocalizedString("poToastReject", comment: ""), purchaseOrder.poid!))
+            })
         })
         viewController.present(noteAlert!, animated: true)
     }
