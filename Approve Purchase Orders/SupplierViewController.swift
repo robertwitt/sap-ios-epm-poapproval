@@ -117,6 +117,7 @@ class SupplierViewController: UITableViewController, MFMailComposeViewController
         let mailComposer = MFMailComposeViewController()
         mailComposer.mailComposeDelegate = self
         mailComposer.setToRecipients([supplier!.contactEmail!])
+        present(mailComposer, animated: true)
     }
     
     @objc func messageTapped(_ sender: UIButton) {
@@ -127,6 +128,15 @@ class SupplierViewController: UITableViewController, MFMailComposeViewController
         let messageComposer = MFMessageComposeViewController()
         messageComposer.messageComposeDelegate = self
         messageComposer.recipients = [supplier!.contactPhone!]
+        present(messageComposer, animated: true)
+    }
+    
+    @objc func phoneTapped(_ sender: UIButton) {
+        guard let url = URL(string: "telprompt://\(supplier!.contactPhone!)"), UIApplication.shared.canOpenURL(url) else {
+            showAlert(withMessage: NSLocalizedString("phoneServicesUnavailable", comment: ""))
+            return
+        }
+        UIApplication.shared.open(url)
     }
     
     // MARK: Data Access
@@ -160,6 +170,7 @@ class SupplierViewController: UITableViewController, MFMailComposeViewController
         if supplier?.contactPhone != nil {
             activityControl.addActivities([.phone, .message])
             activityControl.activityItems[.phone]?.setTintColor(color, for: .normal)
+            activityControl.activityItems[.phone]?.addTarget(self, action: #selector(phoneTapped(_:)), for: .touchUpInside)
             activityControl.activityItems[.message]?.setTintColor(color, for: .normal)
             activityControl.activityItems[.message]?.addTarget(self, action: #selector(messageTapped(_:)), for: .touchUpInside)
         }
@@ -184,6 +195,7 @@ extension SupplierViewController {
         if result == .sent {
             FUIToastMessage.show(message: NSLocalizedString("mailSent", comment: ""))
         }
+        controller.dismiss(animated: true)
     }
     
 }
@@ -196,6 +208,7 @@ extension SupplierViewController {
         if result == .sent {
             FUIToastMessage.show(message: NSLocalizedString("messageSent", comment: ""))
         }
+        controller.dismiss(animated: true)
     }
     
 }

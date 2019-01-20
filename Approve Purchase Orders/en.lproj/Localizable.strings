@@ -41,3 +41,4 @@
 "mailSent" = "Email was sent";
 "messageServicesUnavailable" = "Messaging services are not available";
 "messageSent" = "Message was sent";
+"phoneServicesUnavailable" = "Phone services are not available";
