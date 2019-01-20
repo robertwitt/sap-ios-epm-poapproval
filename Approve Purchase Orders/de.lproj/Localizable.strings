@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  Approve Purchase Orders
+
+  Created by Robert Witt on 05.01.19.
+  Copyright © 2019 SAP. All rights reserved.
+*/
+
+"formattedTimeAgo" = "vor %@";
+"errorAlertTitle" = "Fehler";
+"alertTitle" = "Alarm";
+"alertButtonOK" = "OK";
+"poInboxTitleWithCount" = "Bestellung (%d)";
+"poOrderedByWithName" = "Bestellt von %@";
+"poItemCount" = "%d Positionen";
+"poActionApprove" = "Genehmigen";
+"poActionReject" = "Ablehnen";
+"poActionCancel" = "Abbrechen";
+"poToastApprove" = "Bestellung %@ genehmigt";
+"poToastReject" = "Bestellung %@ abgelehnt";
+"poActionSheetTitle" = "Aktion";
+"noteAlertTitle" = "Notiz hinzufügen";
+"noteAlertPlaceholderOptional" = "Optional";
+"noteAlertPlaceholderMandatory" = "Obligatorisch";
+"noteAlertButtonOK" = "OK";
+"noteAlertButtonCancel" = "Abbrechen";
+"poDetailTitleInfo" = "Generelle Informationen";
+"poDetailTitleItems" = "Positionen";
+"poID" = "Bestellnummer";
+"poDeliveryDate" = "Lieferdatum";
+"poDeliveryDateEarliest" = "%@ oder später";
+"poDeliveryAddress" = "Lieferadresse";
+"poSupplier" = "Lieferant";
+"poSupplierEmail" = "Email";
+"poSupplierPhone" = "Telefon";
+"poSupplierFax" = "Fax";
+"poSupplierAddress" = "Adresse";
+"poItemDeliveryDate" = "Geliefert durch %@";
+"poItemPriceAndQuantity" = "%@ / %@";
+"mailServicesUnavailable" = "Email-Services sind nicht verfügbar";
+"mailSent" = "Email wurde gesendet";
+"messageServicesUnavailable" = "Nachrichtenservices sind nicht verfügbar";
+"messageSent" = "Nachricht wurde gesendet";

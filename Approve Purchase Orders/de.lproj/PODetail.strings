@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "OXi-9z-hhd"; */
+"OXi-9z-hhd.text" = "Title";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "X0V-b2-ZKw"; */
+"X0V-b2-ZKw.text" = "Detail";
+
+/* Class = "UINavigationItem"; title = "Supplier"; ObjectID = "dDn-SI-82x"; */
+"dDn-SI-82x.title" = "Lieferant";
+
+/* Class = "UINavigationItem"; title = "Purchase Order"; ObjectID = "gmG-OW-3Q7"; */
+"gmG-OW-3Q7.title" = "Bestellung";

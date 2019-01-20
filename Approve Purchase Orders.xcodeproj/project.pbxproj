@@ -34,12 +34,12 @@
 		4B6C757721E0518B009B2068 /* LocalDateTimeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */; };
 		4B6C757921E05F53009B2068 /* POActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757821E05F53009B2068 /* POActionController.swift */; };
 		4B6C757B21E0F2F2009B2068 /* PODetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */; };
-		4B6C757D21E0F48E009B2068 /* PODetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B6C757C21E0F48E009B2068 /* PODetail.storyboard */; };
 		4B82CE9621E3DF2100F0BA21 /* PurchaseOrderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82CE9521E3DF2100F0BA21 /* PurchaseOrderAction.swift */; };
 		4BBBF5F021F2714800001080 /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF5EE21F2714800001080 /* MapCell.swift */; };
 		4BBBF5F121F2714800001080 /* MapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBBF5EF21F2714800001080 /* MapCell.xib */; };
 		4BBBF5F321F27F2000001080 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF5F221F27F2000001080 /* MapViewExtension.swift */; };
 		4BBBF5F521F2800E00001080 /* SupplierAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBBF5F421F2800E00001080 /* SupplierAnnotationView.swift */; };
+		4BBBF5FC21F49FEF00001080 /* PODetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BBBF5FE21F49FEF00001080 /* PODetail.storyboard */; };
 		4C1518F617AF29F1F949D86B /* Supplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910E50382CA6B0BE83E9A087 /* Supplier.swift */; };
 		5C406A0DBE2DD081BABE3EA3 /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6391D6B7C4C6B57144A96CD /* EPMREFAPPSPOAPVSRVEntitiesFactory.swift */; };
 		618B5603DD38FAA37CCE43C4 /* PurchaseOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAA23C5372E5A49744F6735 /* PurchaseOrderDetailViewController.swift */; };
@@ -110,12 +110,19 @@
 		4B6C757621E0518B009B2068 /* LocalDateTimeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDateTimeExtension.swift; sourceTree = "<group>"; };
 		4B6C757821E05F53009B2068 /* POActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POActionController.swift; sourceTree = "<group>"; };
 		4B6C757A21E0F2F2009B2068 /* PODetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PODetailViewController.swift; sourceTree = "<group>"; };
-		4B6C757C21E0F48E009B2068 /* PODetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PODetail.storyboard; sourceTree = "<group>"; };
 		4B82CE9521E3DF2100F0BA21 /* PurchaseOrderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrderAction.swift; sourceTree = "<group>"; };
 		4BBBF5EE21F2714800001080 /* MapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		4BBBF5EF21F2714800001080 /* MapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCell.xib; sourceTree = "<group>"; };
 		4BBBF5F221F27F2000001080 /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		4BBBF5F421F2800E00001080 /* SupplierAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierAnnotationView.swift; sourceTree = "<group>"; };
+		4BBBF5F621F49D7900001080 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PurchaseOrderItem.strings; sourceTree = "<group>"; };
+		4BBBF5F721F49D7900001080 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Supplier.strings; sourceTree = "<group>"; };
+		4BBBF5F821F49D7900001080 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PurchaseOrder.strings; sourceTree = "<group>"; };
+		4BBBF5F921F49D7900001080 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		4BBBF5FA21F49D7A00001080 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4BBBF5FB21F49D7A00001080 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4BBBF5FD21F49FEF00001080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PODetail.storyboard; sourceTree = "<group>"; };
+		4BBBF60021F49FF300001080 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/PODetail.strings; sourceTree = "<group>"; };
 		568BDC8CE03DB3B368CA32F9 /* FunctionImportResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FunctionImportResult.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/FunctionImportResult.swift"; sourceTree = "<group>"; };
 		5740F73EF513AFC63136D1A5 /* PurchaseOrderItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseOrderItem.swift; path = "Proxy Classes/de.robertwitt.demo.epm.poapproval/public/PurchaseOrderItem.swift"; sourceTree = "<group>"; };
 		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
@@ -198,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
-				4B6C757C21E0F48E009B2068 /* PODetail.storyboard */,
+				4BBBF5FE21F49FEF00001080 /* PODetail.storyboard */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				4BBBF5EE21F2714800001080 /* MapCell.swift */,
 				4BBBF5EF21F2714800001080 /* MapCell.xib */,
@@ -383,6 +390,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 7A1315AC1D4B982000A5DA56;
 			productRefGroup = 7A1315B61D4B982000A5DA56 /* Products */;
@@ -405,7 +413,7 @@
 				12D066CF1F4DDB0E0075EBA4 /* ConfigurationProvider.plist in Resources */,
 				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
 				CBCA7A991E3778A9001AF49E /* Main.storyboard in Resources */,
-				4B6C757D21E0F48E009B2068 /* PODetail.storyboard in Resources */,
+				4BBBF5FC21F49FEF00001080 /* PODetail.storyboard in Resources */,
 				4B6C756D21E033E0009B2068 /* Localizable.strings in Resources */,
 				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
 				1683F8591CF482EDC0614B56 /* PurchaseOrderItem.storyboard in Resources */,
@@ -468,14 +476,25 @@
 			isa = PBXVariantGroup;
 			children = (
 				4B6C756E21E033E0009B2068 /* en */,
+				4BBBF5FB21F49D7A00001080 /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4BBBF5FE21F49FEF00001080 /* PODetail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4BBBF5FD21F49FEF00001080 /* Base */,
+				4BBBF60021F49FF300001080 /* de */,
+			);
+			name = PODetail.storyboard;
 			sourceTree = "<group>";
 		};
 		7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7A1315C41D4B982000A5DA56 /* Base */,
+				4BBBF5FA21F49D7A00001080 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -484,6 +503,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FA6C1AEE376D97154DBF3159 /* Base */,
+				4BBBF5F621F49D7900001080 /* de */,
 			);
 			name = PurchaseOrderItem.storyboard;
 			path = PurchaseOrderItem;
@@ -493,6 +513,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AC4640FED817E4681B5D4D1E /* Base */,
+				4BBBF5F821F49D7900001080 /* de */,
 			);
 			name = PurchaseOrder.storyboard;
 			path = PurchaseOrder;
@@ -502,6 +523,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB909D801E38CA8800218154 /* Base */,
+				4BBBF5F921F49D7900001080 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -510,6 +532,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				CE6A3A83D4E0760FAFA1EFB8 /* Base */,
+				4BBBF5F721F49D7900001080 /* de */,
 			);
 			name = Supplier.storyboard;
 			path = Supplier;
@@ -522,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -582,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

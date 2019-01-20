@@ -1,0 +1,6 @@
+
+/* Class = "UINavigationItem"; title = "Purchase Orders"; ObjectID = "PEH-PR-IZU"; Note = "XTIT: Title of Collections screen."; */
+"PEH-PR-IZU.title" = "Bestellungen";
+
+/* Class = "UINavigationController"; title = "Master"; ObjectID = "RMx-3f-FxP"; Note = "NOTR: Do not translate it."; */
+"RMx-3f-FxP.title" = "Master";
